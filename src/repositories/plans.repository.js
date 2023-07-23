@@ -1,33 +1,35 @@
-import { Pin, Plan } from "../models/index.js";
-
+import { Pin, Plan } from '../models/index.js';
 
 class PlansRepository {
   create(plan) {
-    return Plan.create(plan, {plain: true});
+    return Plan.create(plan, { plain: true });
   }
 
   findById(id) {
     return Plan.findByPk(id, {
-      plain: true
+      plain: true,
     });
   }
-  
-  findByCode(code){
-    return Plan.findOne( {
-      where: {code},
-      plain: true
+
+  findByCode(code) {
+    return Plan.findOne({
+      where: { code },
+      plain: true,
     });
   }
 
   findByCodeWithPins(code) {
-    return Plan.findOne( {
-      where: {code},
-      include: [{
-        model: Pin,
-        as: 'pins',
-        required: false
-      }],
-      plain: true
+    console.log(code);
+    return Plan.findOne({
+      where: { code },
+      include: [
+        {
+          model: Pin,
+          as: 'pins',
+          required: false,
+        },
+      ],
+      plain: true,
     });
   }
 
