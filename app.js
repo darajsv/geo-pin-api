@@ -61,6 +61,10 @@ app.post('/routes', async (req, res) => {
   }
 });
 
+app.get('/', async (req, res) => {
+  res.send('hello world');
+});
+
 app.listen(port, () => {
   console.log(`Express app listening at http://localhost:${port}`);
 });
