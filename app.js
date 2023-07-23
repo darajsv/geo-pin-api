@@ -14,14 +14,7 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-app.use(
-  cors({
-    origin: '*',
-    methods: '*',
-    allowedHeaders: '*',
-    exposedHeaders: '*',
-  })
-);
+app.use(cors({}));
 
 app.post('/plans/:id/pins', async (req, res) => {
   try {
