@@ -5,6 +5,8 @@ import bodyParser from 'body-parser';
 import { detailLocation } from './src/services/detailLocation.js';
 import { detailPlan } from './src/services/detailPlan.js';
 import { getRoutes } from './src/services/getRoutes.js';
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 const port = 3000;
 
@@ -66,5 +68,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Express app listening at http://localhost:${port}`);
+  console.log(`Express app listening at ${process.env.BASE_URL}:${port}`);
 });
