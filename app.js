@@ -12,9 +12,9 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.json());
+app.use(cors());
 
-app.use(cors({}));
+app.use(bodyParser.json());
 
 app.post('/plans/:id/pins', async (req, res) => {
   try {
