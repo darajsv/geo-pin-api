@@ -17,4 +17,5 @@ const sequelize = new Sequelize(
   }
 );
 
+console.log('criado');
 export default sequelize;
