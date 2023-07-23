@@ -42,10 +42,14 @@ app.get('/location/:id', async (req, res) => {
 });
 
 app.get('/plans/:id', async (req, res) => {
+  console.log('entrei aqui');
   try {
     const result = await detailPlan(req.params.id);
+    console.log('entrei aqui > ', req);
+
     res.status(result.statusCode).send(result.body);
   } catch (error) {
+    console.log(error);
     res
       .status(500)
       .send({ error: 'An error occurred while retrieving plan details.' });
