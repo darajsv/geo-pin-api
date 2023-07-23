@@ -14,9 +14,8 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: 'http://ec2-34-238-39-60.compute-1.amazonaws.com:8080', // Replace with your Vue.js frontend domain
+    origin: '*', // Replace with your Vue.js frontend domain
     methods: 'GET, POST, PUT, DELETE', // Add the HTTP methods your frontend will use
-    credentials: true, // Set to true if your frontend includes credentials in the request (e.g., cookies)
   })
 );
 
