@@ -5,15 +5,17 @@ import bodyParser from 'body-parser';
 import { detailLocation } from './src/services/detailLocation.js';
 import { detailPlan } from './src/services/detailPlan.js';
 import { getRoutes } from './src/services/getRoutes.js';
-import dotenv from 'dotenv';
 import cors from 'cors';
+import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
 const port = 3000;
-
-app.use(cors());
-
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 app.use(bodyParser.json());
 
 app.post('/plans/:id/pins', async (req, res) => {
