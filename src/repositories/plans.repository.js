@@ -19,7 +19,6 @@ class PlansRepository {
   }
 
   findByCodeWithPins(code) {
-    console.log(code);
     return Plan.findOne({
       where: { code },
       include: [
